@@ -1,4 +1,5 @@
-export const useTestStore = defineStore('CountStore', {
+/* eslint-disable no-undef */
+export const useTestStore = defineStore('TestStore', {
 	state: () => ({
 		count: 0,
 		name: '',

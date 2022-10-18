@@ -5,6 +5,11 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+// eslint-disable-next-line no-undef
+const testStore = useTestStore();
+
+console.log('#####', testStore.count);
+</script>
 
 <style lang="scss" scoped></style>

@@ -9,12 +9,8 @@ module.exports = {
 		'plugin:nuxt/recommended',
 		'plugin:vue/vue3-recommended',
 		'plugin:prettier/recommended',
+		'./.nuxt/.eslintrc.js',
 	],
-	globals: {
-		ref: true,
-		computed: true,
-		defineStore: true,
-	},
 	rules: {
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-debug': process.env.NODE_ENV === 'production' ? 'error' : 'off',
