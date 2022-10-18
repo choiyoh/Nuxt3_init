@@ -13,6 +13,7 @@ module.exports = {
 	globals: {
 		ref: true,
 		computed: true,
+		defineStore: true,
 	},
 	rules: {
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
