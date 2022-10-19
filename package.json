@@ -8,18 +8,20 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/kit": "^3.0.0-rc.11",
+    "@nuxt/schema": "^3.0.0-rc.11",
+    "@pinia/nuxt": "^0.4.3",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.4.0",
+    "fibers": "^5.0.3",
+    "node-sass": "^7.0.3",
     "nuxt": "3.0.0-rc.11",
     "prettier": "^2.7.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
     "vite-plugin-eslint": "^1.8.1"
-  },
-  "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.11",
-    "@nuxt/schema": "^3.0.0-rc.11",
-    "@pinia/nuxt": "^0.4.3"
   }
 }

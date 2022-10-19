@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-	<div>Hello, World</div>
+	<div class="title-text">Hello, World</div>
 </template>
 
 <script setup>
@@ -14,4 +14,8 @@ const testStore = useTestStore();
 console.log('#####', testStore.count);
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.title-text {
+	@include bold-text;
+}
+</style>
