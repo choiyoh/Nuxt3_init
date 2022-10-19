@@ -1,12 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-	<div>
-		<NuxtWelcome />
-	</div>
+	<div>Hello, World</div>
 </template>
 
 <script setup>
-// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
+definePageMeta({
+	layout: 'default',
+});
+
 const testStore = useTestStore();
 
 console.log('#####', testStore.count);
