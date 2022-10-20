@@ -24,4 +24,15 @@ export default defineNuxtConfig({
 	imports: {
 		dirs: ['stores'],
 	},
+	css: ['~/assets/css/tailwind.css'],
+	build: {
+		postcss: {
+			postcssOptions: {
+				plugins: {
+					tailwindcss: {},
+					autoprefixer: {},
+				},
+			},
+		},
+	},
 });

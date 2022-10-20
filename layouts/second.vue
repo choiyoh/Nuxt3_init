@@ -1,7 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-	<div class="default-layout">
-		<NavigationBar />
+	<div class="second-layout">
 		<NuxtPage />
 		<Footer />
 	</div>
