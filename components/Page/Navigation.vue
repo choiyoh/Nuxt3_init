@@ -1,13 +1,12 @@
 <template>
-	<nav class="gnb">
-		<NuxtLink to="/">Main</NuxtLink>
-		<NuxtLink to="/auth/login">Login</NuxtLink>
+	<nav class="gnb h-20 flex items-center justify-center space-x-4">
+		<NuxtLink class="text-xl" to="/">Main</NuxtLink>
+		<NuxtLink class="text-xl" to="/auth/login">Login</NuxtLink>
 	</nav>
 </template>
 
 <style lang="scss">
 .gnb {
-	text-align: center;
 	background: #45b322;
 }
 </style>

@@ -10,4 +10,8 @@
 	</footer>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+footer {
+	background-color: #34de;
+}
+</style>
