@@ -4,5 +4,7 @@
     "login": "Loigin"
   },
   "hello": "Hello, {name}!",
-  "language": "Languages"
+  "language": "Languages",
+  "add": "Add",
+  "delete": "Delete"
 }

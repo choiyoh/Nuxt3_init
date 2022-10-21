@@ -1,6 +1,9 @@
 <template>
 	<div class="test-json-page">
-		<table>
+		<div class="button-wrapper w-full">
+			<button @click="addRow">+{{ $t('add') }}</button>
+		</div>
+		<table class="input-table">
 			<thead>
 				<tr>
 					<td>Key*</td>
@@ -12,17 +15,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr v-for="(row, idx) in rows" :key="idx">
 					<td>
-						<input v-model="keyValue" type="text" />
+						<input v-model="row.keyValue" type="text" />
 					</td>
 					<td>
-						<input v-model="nameValue" type="text" />
+						<input v-model="row.nameValue" type="text" />
 					</td>
 					<td>
-						<select v-model="typeSelected">
+						<select v-model="row.typeSelected">
 							<option
-								v-for="option in typeOptions"
+								v-for="option in row.typeOptions"
 								:key="option"
 								:value="option"
 							>
@@ -30,15 +33,20 @@
 							</option>
 						</select>
 					</td>
-					<td class="flex content-center justify-center">
-						<input v-model="isRequired" type="checkbox" />
-						Required
+					<td>
+						<div class="checkbox-wrapper">
+							<input v-model="row.isRequired" type="checkbox" />
+							<span>Required</span>
+						</div>
 					</td>
 					<td>
-						<input v-model="exampleValue" type="text" />
+						<input v-model="row.exampleValue" type="text" />
 					</td>
 					<td>
-						<input v-model="description" type="text" />
+						<input v-model="row.description" type="text" />
+						<button v-if="rows.length > 1" @click="deleteRow(idx)">
+							{{ $t('delete') }}
+						</button>
 					</td>
 				</tr>
 			</tbody>
@@ -56,11 +64,52 @@
 </template>
 
 <script setup>
-const keyValue = ref('');
-const nameValue = ref('');
-const typeSelected = ref('');
-const typeOptions = ['STRING', 'NUMBER', 'DATE'];
-const isRequired = ref(false);
+const rows = ref([
+	{
+		keyValue: '',
+		nameValue: '',
+		typeSelected: '',
+		typeOptions: ['STRING', 'NUMBER', 'DATE'],
+		isRequired: false,
+		exampleValue: '',
+		description: '',
+	},
+]);
+
+const jsonText = ref('');
+
+const addRow = () => {
+	rows.value.push({
+		keyValue: '',
+		nameValue: '',
+		typeSelected: '',
+		typeOptions: ['STRING', 'NUMBER', 'DATE'],
+		isRequired: false,
+		exampleValue: '',
+		description: '',
+	});
+};
+
+const deleteRow = index => {
+	rows.value.splice(index, 1);
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.button-wrapper {
+	text-align: right;
+}
+.input-table {
+	margin-bottom: 20px;
+}
+
+.checkbox-wrapper {
+	display: flex;
+	justify-content: center;
+	span {
+		display: flex;
+		align-self: center;
+		margin-left: 5px;
+	}
+}
+</style>
