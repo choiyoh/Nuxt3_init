@@ -1,0 +1,8 @@
+{
+  "menu": {
+    "main": "메인",
+    "login": "로그인"
+  },
+  "hello": "안녕하세요, {name}!",
+  "language": "언어"
+}

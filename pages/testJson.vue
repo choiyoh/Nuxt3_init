@@ -30,9 +30,28 @@
 							</option>
 						</select>
 					</td>
+					<td class="flex content-center justify-center">
+						<input v-model="isRequired" type="checkbox" />
+						Required
+					</td>
+					<td>
+						<input v-model="exampleValue" type="text" />
+					</td>
+					<td>
+						<input v-model="description" type="text" />
+					</td>
 				</tr>
 			</tbody>
 		</table>
+
+		<div class="json-area-wrapper">
+			<textarea
+				v-model="jsonText"
+				name="json-area"
+				cols="30"
+				rows="10"
+			></textarea>
+		</div>
 	</div>
 </template>
 
@@ -41,6 +60,7 @@ const keyValue = ref('');
 const nameValue = ref('');
 const typeSelected = ref('');
 const typeOptions = ['STRING', 'NUMBER', 'DATE'];
+const isRequired = ref(false);
 </script>
 
 <style lang="scss" scoped></style>

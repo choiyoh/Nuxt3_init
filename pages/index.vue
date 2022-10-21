@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<div class="title-text">Hello, World</div>
-		<h1 class="font-bold text-3xl">Home</h1>
+		<h1 class="font-bold text-3xl">{{ $t('hello', { name: '사용자' }) }}</h1>
 	</div>
 </template>
 
