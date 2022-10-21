@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 export const useTestStore = defineStore('TestStore', {
 	state: () => ({
-		count: 0,
+		count: 1,
 		name: '',
 	}),
 	getters: {},
