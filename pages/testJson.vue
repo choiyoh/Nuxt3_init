@@ -17,7 +17,11 @@
 			<tbody>
 				<tr v-for="(row, idx) in rows" :key="idx">
 					<td>
-						<input v-model="row.keyValue" type="text" />
+						<input
+							v-model="row.keyValue"
+							type="text"
+							@input="convertIntoJson"
+						/>
 					</td>
 					<td>
 						<input v-model="row.nameValue" type="text" />
@@ -40,7 +44,11 @@
 						</div>
 					</td>
 					<td>
-						<input v-model="row.exampleValue" type="text" />
+						<input
+							v-model="row.exampleValue"
+							type="text"
+							@input="convertIntoJson"
+						/>
 					</td>
 					<td>
 						<input v-model="row.description" type="text" />
@@ -92,6 +100,21 @@ const addRow = () => {
 
 const deleteRow = index => {
 	rows.value.splice(index, 1);
+	convertIntoJson();
+};
+
+// 테이블에 입력한 값 JSON 형식으로 변환
+const convertIntoJson = () => {
+	jsonText.value = '';
+	rows.value.forEach((row, index) => {
+		jsonText.value += `"${row.keyValue}": "${
+			row.exampleValue ? row.exampleValue : ''
+		}"`;
+		if (index + 1 < rows.value.length) {
+			jsonText.value = jsonText.value + ', \n';
+		}
+	});
+	jsonText.value = `{\n ${jsonText.value} \n}`;
 };
 </script>
 
