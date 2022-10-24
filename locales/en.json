@@ -1,7 +1,7 @@
 {
   "menu": {
     "main": "Main",
-    "login": "Loigin"
+    "login": "Login"
   },
   "hello": "Hello, {name}!",
   "language": "Languages",
