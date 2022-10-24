@@ -66,6 +66,7 @@
 				name="json-area"
 				cols="30"
 				rows="10"
+				@input="onChangeJsonData"
 			></textarea>
 		</div>
 	</div>
@@ -115,6 +116,25 @@ const convertIntoJson = () => {
 		}
 	});
 	jsonText.value = `{\n ${jsonText.value} \n}`;
+};
+
+const onChangeJsonData = () => {
+	const jsonData = JSON.parse(jsonText.value);
+	rows.value = [];
+	Object.keys(jsonData).forEach((keyVal, index) => {
+		rows.value.push({
+			keyValue: keyVal,
+			nameValue: '',
+			typeSelected: '',
+			typeOptions: ['STRING', 'NUMBER', 'DATE'],
+			isRequired: false,
+			exampleValue:
+				Object.values(jsonData)[index] !== undefined
+					? Object.values(jsonData)[index]
+					: '',
+			description: '',
+		});
+	});
 };
 </script>
 
