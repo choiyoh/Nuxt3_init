@@ -12,6 +12,7 @@
 
 <style lang="scss">
 footer {
-	background-color: #34de;
+	background-color: $dave-primary;
+	color: $dave-gray;
 }
 </style>

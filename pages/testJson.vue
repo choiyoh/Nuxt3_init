@@ -118,6 +118,7 @@ const convertIntoJson = () => {
 	jsonText.value = `{\n ${jsonText.value} \n}`;
 };
 
+// Text Area에 입력한 JSON 데이터 -> 테이블
 const onChangeJsonData = () => {
 	const jsonData = JSON.parse(jsonText.value);
 	rows.value = [];
